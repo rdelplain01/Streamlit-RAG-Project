@@ -1,10 +1,6 @@
 import streamlit as st
-import os
-from dotenv import load_dotenv
 from xai_sdk import Client
 from xai_sdk.chat import user, system
-
-load_dotenv()
 
 # Ensure prompt exists in session state
 if 'prompt' not in st.session_state:
@@ -14,7 +10,7 @@ if 'prompt' not in st.session_state:
 if 'messages' not in st.session_state:
     st.session_state.messages = []
 # Load API key from .env
-API_KEY = os.getenv("API_KEY", "")
+API_KEY = st.secrets["GROK_API_KEY"]
 
 # Test
 client = Client(
