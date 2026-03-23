@@ -1,3 +1,5 @@
 streamlit
 xai-sdk
 elevenlabs
+psycopg[binary]
+psycopg2-binary
